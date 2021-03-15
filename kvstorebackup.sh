@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # -k do not validy certs, -s silent, -o output to devnull , -w --write-out the status code
 if [[ http_code=$(curl -k -s -o /dev/null -u $KV_USER:$PW -X POST https://$SPLUNK_URL:$KV_PORT/services/kvstore/backup/create -w "%{http_code}") -eq 200 ]]
 then
